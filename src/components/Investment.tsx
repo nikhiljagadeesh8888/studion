@@ -6,7 +6,7 @@ const Investment = () => {
   const [packageVisible, setPackageVisible] = useState(false);
   const textRef = useRef<HTMLDivElement>(null);
   const packageRef = useRef<HTMLDivElement>(null);
-  const API = "http://localhost:1337";
+  const API = import.meta.env.VITE_API_URL;
   const [longSessionImage, setLongSessionImage] = useState("");
   const [hourlyImage, setHourlyImage] = useState("");
 
@@ -38,15 +38,16 @@ const Investment = () => {
   useEffect(() => {
   const fetchImages = async () => {
     try {
+      const API = import.meta.env.VITE_API_URL;
+
       const res = await fetch(`${API}/api/investment?populate=*`);
       const data = await res.json();
 
       const longImg = data?.data?.long_session_image?.url;
       const hourlyImg = data?.data?.hourly_image?.url;
 
-      if (longImg) setLongSessionImage(API + longImg);
-      if (hourlyImg) setHourlyImage(API + hourlyImg);
-
+      if (longImg) setLongSessionImage(`${API}${longImg}`);
+      if (hourlyImg) setHourlyImage(`${API}${hourlyImg}`);
     } catch (err) {
       console.error("Error fetching images", err);
     }
