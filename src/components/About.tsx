@@ -7,7 +7,7 @@ const API = import.meta.env.VITE_API_URL;
 const VisionSection = () => {
   const [image, setImage] = useState("");
 
-  useEffect(() => {
+ useEffect(() => {
   const fetchImage = async () => {
     try {
       const res = await fetch(`${API}/api/myself?populate=image`);
@@ -15,7 +15,7 @@ const VisionSection = () => {
 
       console.log(data); // debug
 
-      const img = data?.data?.attributes?.image?.data?.attributes?.url;
+      const img = data?.data?.image?.url;
 
       if (img) {
         setImage(`${API}${img}`);
