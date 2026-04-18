@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 96%;
+    --foreground: 30 5% 25%;
+
+    --card: 40 20% 96%;
+    --card-foreground: 30 5% 25%;
+
+    --popover: 40 20% 96%;
+    --popover-foreground: 30 5% 25%;
+
+    --primary: 90 8% 55%;
+    --primary-foreground: 40 20% 96%;
+
+    --secondary: 40 15% 90%;
+    --secondary-foreground: 30 5% 25%;
+
+    --muted: 40 10% 88%;
+    --muted-foreground: 30 5% 45%;
+
+    --accent: 90 8% 55%;
+    --accent-foreground: 40 20% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 10% 82%;
+    --input: 30 10% 82%;
+    --ring: 90 8% 55%;
+
+    --radius: 0px;
+
+    --sidebar-background: 40 20% 96%;
+    --sidebar-foreground: 30 5% 25%;
+    --sidebar-primary: 90 8% 55%;
+    --sidebar-primary-foreground: 40 20% 96%;
+    --sidebar-accent: 40 15% 90%;
+    --sidebar-accent-foreground: 30 5% 25%;
+    --sidebar-border: 30 10% 82%;
+    --sidebar-ring: 90 8% 55%;
+
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: system-ui, -apple-system, sans-serif;
+
+    --nav-tracking: 0.25em;
+    --heading-tracking: 0.15em;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-foreground uppercase text-xs tracking-[0.25em] transition-colors duration-300;
+  }
+
+  .nav-link:hover {
+    @apply text-primary;
+  }
+
+  .section-heading {
+    font-family: var(--font-serif);
+    @apply text-foreground uppercase tracking-[0.15em] text-2xl md:text-3xl lg:text-4xl font-light;
+  }
+
+  .section-subheading {
+    font-family: var(--font-serif);
+    @apply text-muted-foreground italic text-xl md:text-2xl font-light;
+  }
+
+  .body-text {
+    font-family: var(--font-serif);
+    @apply text-foreground text-base md:text-lg font-light leading-relaxed;
+  }
+
+  .btn-outline-editorial {
+    @apply border border-foreground uppercase text-xs tracking-[0.25em] px-10 py-4 transition-all duration-300 bg-transparent text-foreground;
+  }
+
+  .btn-outline-editorial:hover {
+    @apply bg-foreground text-background;
+  }
+}
