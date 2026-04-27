@@ -203,7 +203,8 @@ const Header = () => {
       const data = await res.json();
 
       const logoUrl =
-        data?.data?.[0]?.attributes?.logo?.data?.attributes?.url;
+        data?.data?.[0]?.logo?.formats?.small?.url ||
+        data?.data?.[0]?.logo?.url;
 
       if (logoUrl) {
         setLogo(`${API}${logoUrl}`);
@@ -214,7 +215,7 @@ const Header = () => {
   };
 
   fetchLogo();
-}, []);
+}, [API]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
