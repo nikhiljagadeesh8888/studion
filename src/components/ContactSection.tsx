@@ -36,15 +36,15 @@ const ContactSection = () => {
             <div>
               <h3 className="font-serif text-lg uppercase tracking-[0.15em] text-foreground mb-3">Email</h3>
               <p className="body-text text-sm">
-                <a href="mailto:nikhiljagadeesh8888@gmail.com" className="hover:text-primary transition-colors">
-                  nikhiljagadeesh8888@gmail.com
+                <a href="mailto:studion8978@gmail.com" className="hover:text-primary transition-colors">
+                  studion8978@gmail.com
                 </a>
               </p>
             </div>
             <div>
               <h3 className="font-serif text-lg uppercase tracking-[0.15em] text-foreground mb-3">Location</h3>
-              <p className="body-text text-sm">37 Myrtle Road</p>
-              <p className="body-text text-sm">Leicester, LE2 1FU</p>
+              <p className="body-text text-sm">77A London road</p>
+              <p className="body-text text-sm">Leicester, LE2 0PF</p>
             </div>
             <div className="flex gap-6 pt-2">
               <a
@@ -71,7 +71,7 @@ const ContactSection = () => {
             className="space-y-6"
             onSubmit={(e) => {
               e.preventDefault();
-              window.location.href = "mailto:nikhiljagadeesh8888@gmail.com";
+              window.location.href = "mailto:studion8978@gmail.com";
             }}
           >
             <div>
